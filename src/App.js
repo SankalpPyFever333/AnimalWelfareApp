@@ -34,8 +34,8 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/register" element={<Register />}></Route>
-          <Route path="/register/verify" element={<Verifyotp />}></Route>
+          <Route path="/" element={<Register />}></Route>
+          <Route path="/verify" element={<Verifyotp />}></Route>
         </Routes>
       </BrowserRouter>
     </div>

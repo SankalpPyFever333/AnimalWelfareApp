@@ -111,7 +111,7 @@ function Register(){
                                           Continue
                                     </button>   : 
                                     <button className= {`btn ${isenabled ? 'button-85': 'disabled'}`} onClick={()=>{
-                                          navigate("/register/verify");
+                                          navigate("/verify");
                                     }}>
                                           VerifyOtp
                                     </button>
