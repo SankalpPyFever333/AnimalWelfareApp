@@ -1,13 +1,14 @@
 import React, { useEffect } from "react";
 import "./App.css";
 import app from "./component/firebase"
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Routes , Route } from "react-router-dom";
 import { onAuthStateChanged } from "firebase/auth";
 
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import "firebase/compat/firestore";
 import Register from "./component/Register";
+import Verifyotp from "./component/Verifyotp";
 function App() {
 
   // useEffect(()=>{
@@ -32,8 +33,10 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Register />
-      
+        <Routes>
+          <Route path="/register" element={<Register />}></Route>
+          <Route path="/register/verify" element={<Verifyotp />}></Route>
+        </Routes>
       </BrowserRouter>
     </div>
   );

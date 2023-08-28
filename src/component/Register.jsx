@@ -5,16 +5,19 @@ import { RecaptchaVerifier, signInWithPhoneNumber} from "firebase/auth";
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
 import "./Register.css"
-import { Link, Route } from "react-router-dom";
+import { Link, Route, useNavigate} from "react-router-dom";
 import authentication from "../component/firebase";
 import Verifyotp from "./Verifyotp";
 // import { IconButton } from "@mui/material";
 
 function Register(){
 
+      const navigate = useNavigate();
       const [phone , setPhone]  = useState(""); 
       const [OTP, setOTP]  = useState("");
       const [isenabled  , setIsenabled] = useState(false);
+      const [isOtpSent, setIsOtpSent] = useState(false);
+
       
 
       const generateRecaptchaVerifier = ()=>{
@@ -37,20 +40,26 @@ function Register(){
             console.log("App is created in Register");
             if(phone.length===13){
                   generateRecaptchaVerifier();
-                  console.log("reCptcha verified!!");
+                  
                   let appVeifier = window.recaptchaVerifier;
                   signInWithPhoneNumber(authentication,phone, appVeifier)
                   .then((confirmationResult)=>{
                         window.confirmationResult = confirmationResult;
+                        console.log("recaptcha verified!! and navigating to verifyOTP");
+                        // verification is successful, now go to Verifyotp.jsx component.
+                        // navigate("./Verifyotp");
+                        setIsOtpSent(true);
+                        
                   })
                   .catch((error)=>{
                         console.log(error);
-                  })
+                  })    
                   
             }
 
 
       }
+      
 
       const verifyOtp = ()=>{
             console.log(OTP);
@@ -94,15 +103,25 @@ function Register(){
                               >Mobile Number</label>
                         </div>
                         <div className="continueBtn">
+                              {/* <Link to= "./Verifyotp.jsx" >
+                              </Link> */}
                               {/* here, btn is a static class, but out of those 2 classes, one will be applied to it. */}
-                              <Link to={verifyOtp} >
-                                    <button className= {`btn ${isenabled ? 'button-85': 'disabled'}`} onClick={handleSendotp}>
-                                          Continue
-                                    </button>
-                              
-                              </Link>
 
-                              
+                              {!isOtpSent ? <button className= {`btn ${isenabled ? 'button-85': 'disabled'}`} onClick={handleSendotp}>
+                                          Continue
+                                    </button>   : 
+                                    <button className= {`btn ${isenabled ? 'button-85': 'disabled'}`} onClick={()=>{
+                                          navigate("/register/verify");
+                                    }}>
+                                          VerifyOtp
+                                    </button>
+                                    }
+
+{/* when otp is sent successfully, then VerifyOtp button rendered and upon clicking on that , we navigate to Verifyotp.jsx component. */}
+
+                                    {/* <button className= {`btn ${isenabled ? 'button-85': 'disabled'}`} onClick={handleSendotp}>
+                                          Continue
+                                    </button>                               */}
                         </div>
                         {/* <label htmlFor="otpInput" className="form-label"></label>
                         <input type="text" id="otpInput" value={OTP} className="form-control" 
