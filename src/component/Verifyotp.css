@@ -1,3 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;500&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,400;1,600&family=Roboto+Condensed:ital,wght@0,300;0,400;1,400&family=Roboto:wght@500&family=Ubuntu:ital,wght@0,400;1,300;1,400;1,500&family=Varela+Round&display=swap');
+.logoImage{
+      height: 40vh;
+      box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+      width: 40vh;
+      padding: 12px;
+      margin: 10px 12px 20px 10px;
+}
 
+.otpLabel{
+      width: 54vw;
+      margin-left: 12px;
+      margin-top: 20px;
+      margin-bottom: 20px;
 
+}
+.otpLabel>span{
+      padding: 12px;
+      margin-left: 12px;
+      color: rgba(43, 42, 42, 0.938);
+      display: flex;
+}
 
+.inputBoxOtp{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      font-size: x-small;
+}
+
+.enterotp{
+      border-radius: 12px;
+      border: 1px solid grey;
+      width: 50px;
+      height: 50px;
+}
+
+.VerifyButton{
+      margin: 37px;
+
+}
+
+.VerifyButton>button{
+      width: 70vw;
+      font-size: 2.9vh;
+      height: 68px;
+      border-radius: 32px;
+      background-color: rgb(188, 183, 183);
+      margin-bottom: 12px;
+      margin-top: 22px;
+      box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+.ResendTimer{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+}
+.ResendTimer>:first-child{
+      color: rgb(78, 76, 76);
+      font-size: 25px;
+}
+.ResendTimer>:last-child{
+      color: rgba(145, 142, 142, 0.795);
+      font-size: 20px;
+}
