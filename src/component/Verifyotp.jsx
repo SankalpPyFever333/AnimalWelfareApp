@@ -4,6 +4,7 @@ function Verifyotp() {
 
   const handleChange = (e)=>{
     // select all the input box and chack whether it reaches to its maxlength or not, if yes, shift the focus to next input box.
+    
   }
 
 

@@ -33,6 +33,13 @@
       border: 1px solid grey;
       width: 50px;
       height: 50px;
+      font-size: 30px;
+}
+
+.enterotp:focus{
+      outline: 2px solid purple;
+      border-color: transparent;
+
 }
 
 .VerifyButton{
