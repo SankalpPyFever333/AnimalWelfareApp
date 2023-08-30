@@ -5,16 +5,16 @@ import { RecaptchaVerifier, signInWithPhoneNumber} from "firebase/auth";
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
 import "./Register.css"
-import { Link, Route, useNavigate} from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import authentication from "../component/firebase";
-import Verifyotp from "./Verifyotp";
+
 // import { IconButton } from "@mui/material";
 
 function Register(){
 
       const navigate = useNavigate();
       const [phone , setPhone]  = useState(""); 
-      const [OTP, setOTP]  = useState("");
+      
       const [isenabled  , setIsenabled] = useState(false);
       const [isOtpSent, setIsOtpSent] = useState(false);
 
@@ -59,19 +59,6 @@ function Register(){
 
 
       }
-      
-
-      const verifyOtp = ()=>{
-            console.log(OTP);
-            if(OTP.length===6){
-                  console.log("OTP verified");
-            }
-            else{
-                  console.log("Not verified");
-            }
-      }
-
-      // DO THE DIGIT CONFIRMATION NOT THE LENGTH.
 
       return(
             <div className="main">

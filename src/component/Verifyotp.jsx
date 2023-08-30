@@ -1,11 +1,13 @@
 import React, { useRef,useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import "./Verifyotp.css"
 function Verifyotp() {
 
   const inputRefs = useRef([]);
+  const [OTP, setOTP]  = useState(Array(6).fill(""));
   // let index = 0;
   // creating 6 reference for each input box.
-  
+  const navigate = useNavigate();
     inputRefs.current = [];
 
   const addtoRef  = (element)=>{
@@ -17,26 +19,37 @@ function Verifyotp() {
       inputRefs.current.push(element);
     }
     console.log("inputRefs element are :" ,inputRefs.current);
-
   }
 
   // const [currentIndex , setCurrentIndex] = useState(0); // for givin index value to input element.
   const handleChange = (index ,e)=>{
     // select all the input box and check whether it reaches to its maxlength or not, if yes, shift the focus to next input box.
-    
-    console.log("index is" , index);
-    const {value} = e.target;
-    console.log(value);
-    console.log(value.length);
-    console.log("length of ref is " ,inputRefs.current.length);
 
+    // destructuring array using spread operator:
+    const otpvalues = [...OTP];
+    const {value} = e.target;
+    otpvalues[index] = value;
+    setOTP(otpvalues);
+    
+    
     if(value.length ===1 && index < inputRefs.current.length-1){
-      console.log("I am inside if condition!");
       ++index;
       inputRefs.current[index].focus();
     }
-    
   }
+
+  const verifyOtp = ()=>{
+            console.log(OTP);
+            if(OTP.length===6){
+                  console.log("OTP verified");
+                  navigate("/verify/whoyouare");
+
+            }
+            else{
+                  console.log("Not verified");
+            }
+      }
+      // DO THE DIGIT CONFIRMATION NOT THE LENGTH.
 
 
 
@@ -45,24 +58,12 @@ function Verifyotp() {
       <div className="logoImage">
         <img src="#" alt="logo" />
       </div>
-
       <div className="otpLabel">
         <span>
           Please enter the otp sent to this mobile Number
         </span>
       </div>
       <div className="inputBoxOtp">
-
-        {/* {[0,0,0,0,0,0].map((ref, index)=>{
-          
-          <input ref={ref} key={index} className='enterotp'  maxLength={1} type="text" onChange={
-            (e) => handleChange(index , e)
-            }/> 
-          
-        })} */}
-
-
-
         <input ref={addtoRef} key={0} className='enterotp' onChange={(e) => {
         handleChange(0,e);
         }} maxLength={1} type="text" autoFocus />
@@ -76,7 +77,7 @@ function Verifyotp() {
       </div>
 
       <div className="VerifyButton">
-        <button>Verify OTP</button>
+        <button onClick={verifyOtp} >Verify OTP</button>
       </div>
 
       <div className="ResendTimer">
@@ -88,5 +89,7 @@ function Verifyotp() {
     </div>
   )
 }
+
+// Add keys event to navigate.
 
 export default Verifyotp

@@ -30,14 +30,17 @@
 
 .enterotp{
       border-radius: 12px;
-      border: 1px solid grey;
+      border: 3px solid grey;
       width: 50px;
       height: 50px;
       font-size: 30px;
+      padding: 15px;
+      color: rgb(76, 74, 74);
+      box-shadow: rgb(27, 138, 217) 11px 10px 32px -9px
 }
 
 .enterotp:focus{
-      outline: 2px solid purple;
+      outline: 2px solid rgb(4, 18, 216);
       border-color: transparent;
 
 }
