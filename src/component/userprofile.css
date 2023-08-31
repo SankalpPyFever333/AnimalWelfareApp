@@ -1,2 +1,10 @@
 
+.userImagePrfile{
+
+}
+
+.userImagePrfile>img{
+      border: 2px solid rgb(211, 217, 217);
+      border-radius: 64px;
+}
 
