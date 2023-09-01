@@ -12,6 +12,7 @@
       margin-left: 12px;
       margin-top: 20px;
       margin-bottom: 20px;
+       font-family: 'Oswald', 'Poppins', 'Roboto Condensed', 'Roboto', 'Ubuntu', 'Varela Round', sans-serif;
 
 }
 .otpLabel>span{
@@ -19,6 +20,7 @@
       margin-left: 12px;
       color: rgba(43, 42, 42, 0.938);
       display: flex;
+       font-family: 'Oswald', 'Poppins', 'Roboto Condensed', 'Roboto', 'Ubuntu', 'Varela Round', sans-serif;
 }
 
 .inputBoxOtp{
@@ -69,8 +71,10 @@
 .ResendTimer>:first-child{
       color: rgb(78, 76, 76);
       font-size: 25px;
+       font-family: 'Oswald', 'Poppins', 'Roboto Condensed', 'Roboto', 'Ubuntu', 'Varela Round', sans-serif;
 }
 .ResendTimer>:last-child{
       color: rgba(145, 142, 142, 0.795);
       font-size: 20px;
+       font-family: 'Oswald', 'Poppins', 'Roboto Condensed', 'Roboto', 'Ubuntu', 'Varela Round', sans-serif;
 }
