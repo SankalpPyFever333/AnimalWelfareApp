@@ -51,6 +51,7 @@ function Userprofiledetails() {
   return (
     <div className='userprofiledetailsmaindiv'>
         <p>Add your details</p>
+        
       <div className="userImageProfile" onClick={handleImageClick}>
         {
           File ? (
@@ -73,7 +74,7 @@ function Userprofiledetails() {
         </div>
         <div className="form">
           <input  type="text" id="cityname" className='form-input' autoComplete='off'/>
-          <label htmlFor="cityname" className="form_label">Your state</label>
+          <label htmlFor="cityname" className="form_label">Your city</label>
         </div>
         
         {/* add more fields after discussing with simanshi */}

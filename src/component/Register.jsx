@@ -7,6 +7,7 @@ import 'firebase/compat/firestore';
 import "./Register.css"
 import { useNavigate} from "react-router-dom";
 import authentication from "../component/firebase";
+import CountrySelect from "./CountrySelect";
 
 // import { IconButton } from "@mui/material";
 
@@ -75,7 +76,9 @@ function Register(){
                         </div>
 
                         <div className="inputMobileNumber">
-                              
+                              <div className="countryselect">
+                                    <CountrySelect/>
+                              </div>
                               <input type="text" onChange={(e)=>{
                                     setPhone(e.target.value)
                                     if(phone.length === 12){

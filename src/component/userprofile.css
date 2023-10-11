@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;500&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,400;1,600&family=Roboto+Condensed:ital,wght@0,300;0,400;1,400&family=Roboto:wght@500&family=Ubuntu:ital,wght@0,400;1,300;1,400;1,500&family=Varela+Round&display=swap');
 
-.userprofiledetailsmaindiv{
-      background-color: rgba(170, 229, 217, 0.475);
-}
+
 
 .userImageProfile{
       display: flex;
@@ -14,6 +12,7 @@
 .userprofiledetailsmaindiv>p{
       margin-top: 22px;
       margin-bottom: 20px;
+      margin-left: 20px;
       font-size: 24px;
       font-weight: 800;
        font-family: 'Oswald', 'Poppins', 'Roboto Condensed', 'Roboto', 'Ubuntu', 'Varela Round', sans-serif;
@@ -43,12 +42,12 @@
 }
 
 .form_label{
-      position: absolute;
+       position: absolute;
       top: 0.3rem;
       left: 0.8rem;
       color: rgba(112, 109, 109, 0.698);
       cursor: text;
-      transition: top 200ms ease-in, left 200ms ease-in , font-size 200ms ease-in;
+      transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
 }
 
 .form-input{
@@ -74,4 +73,15 @@
       top: -0.8rem;
       left: 1.2rem;
       font-size: 1rem;
+}
+/* .form-input:focus,
+.form-input:not(:placeholder-shown) {
+  border-color: #18ffff;
+} */
+
+.form-input:focus ~ .form_label,
+.form-input:not(:placeholder-shown) ~ .form_label {
+  top: -0.8rem;
+  left: 1.2rem;
+  font-size: 1rem;
 }

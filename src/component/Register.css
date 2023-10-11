@@ -42,6 +42,7 @@
 .inputMobileNumber{
       display: flex;
       flex-direction: column;
+      gap: 100px;
       padding: 12px;
       margin-top: 20px;
       position: relative;

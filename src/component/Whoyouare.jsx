@@ -1,4 +1,5 @@
 import React from 'react'
+// import { IconButton } from '@mui/material';
 import "./whoyouare.css"
 import { useNavigate } from 'react-router-dom'
 function Whoyouare() {
@@ -23,14 +24,17 @@ function Whoyouare() {
           </div>
         </div>
       </button>
-      <button onClick={handleRescuerProfile}>
-        <div className="RDUblock">
-          <span>RESCUER</span>
-          <div className="RDUimage">
-            <img src="/public/assests/images.jpeg" alt="" />
+      
+        <button onClick={handleRescuerProfile}>
+          <div className="RDUblock">
+            <span>RESCUER</span>
+            <div className="RDUimage">
+              <img src="/public/assests/images.jpeg" alt="" />
+            </div>
           </div>
-        </div>
-      </button>
+        </button>
+
+      
       <button onClick={handleUserProfile}>
         <div className="RDUblock">
           <span>USER</span>
